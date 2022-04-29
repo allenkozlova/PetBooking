@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PetBooking</string>
+
+    <string name="nav_main_title">Главная</string>
+    <string name="nav_favorites_title">Избранное</string>
+    <string name="nav_order_title">Заявки</string>
+    <string name="nav_profile_title">Профиль</string>
 </resources>
