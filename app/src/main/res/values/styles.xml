@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomNavigationTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/bottom_nav_primary</item>
+        <item name="android:textColorSecondary">@color/bottom_nav_secondary</item>
+    </style>
+
+</resources>

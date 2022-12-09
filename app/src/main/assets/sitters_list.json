@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "sitterPhoto": "https://mtdata.ru/u3/photoD852/20501229401-0/original.jpg",
+    "name": "Константин Б.",
+    "city": "Брянск",
+    "district": "Бежицкий район",
+    "mark": 4,
+    "feedbacks": 6,
+    "price": 550.0
+  },
+  {
+    "id": 1,
+    "sitterPhoto": "https://static-eu.insales.ru/files/1/518/9748998/original/dsc_0059-min.jpg",
+    "name": "Анна М.",
+    "city": "Брянск",
+    "district": "Бежицкий район",
+    "mark": 5,
+    "feedbacks": 4,
+    "price": 700.0
+  },
+  {
+    "id": 2,
+    "sitterPhoto": "https://get.pxhere.com/photo/person-girl-woman-hair-photography-portrait-model-youth-fashion-blue-lady-hairstyle-smile-long-hair-face-dress-eye-head-skin-beauty-blond-photo-shoot-brown-hair-portrait-photography-108386.jpg",
+    "name": "Екатерина Р.",
+    "city": "Брянск",
+    "district": "Советский район",
+    "mark": 4,
+    "feedbacks": 12,
+    "price": 690.0
+  },
+  {
+    "id": 3,
+    "sitterPhoto": "https://i07.fotocdn.net/s110/2215e5c90138c07c/gallery_l/2459010866.jpg",
+    "name": "Павел Т.",
+    "city": "Брянск",
+    "district": "Володарский район",
+    "mark": 3,
+    "feedbacks": 2,
+    "price": 400.0
+  },
+  {
+    "id": 4,
+    "sitterPhoto": "https://get.pxhere.com/photo/person-people-girl-woman-hair-photography-portrait-model-spring-child-lady-facial-expression-season-smile-face-dress-eye-head-skin-beauty-blond-emotion-photo-shoot-brown-hair-portrait-photography-151299.jpg",
+    "name": "Алина Д.",
+    "city": "Брянск",
+    "district": "Фокинский район",
+    "mark": 5,
+    "feedbacks": 10,
+    "price": 800.0
+  },
+  {
+    "id": 5,
+    "sitterPhoto": "https://pixy.org/src/484/4846534.jpg",
+    "name": "Артём Ф.",
+    "city": "Брянск",
+    "district": "Советский район",
+    "mark": 3,
+    "feedbacks": 1,
+    "price": 500.0
+  }
+]

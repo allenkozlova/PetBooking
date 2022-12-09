@@ -14,6 +14,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'FIRST_HOST', '"https://5e510330f2c0d300147c034c.mockapi.io/"'
+        buildConfigField 'String', 'SECOND_HOST', '"https://api.thecatapi.com"'
     }
 
     buildTypes {
@@ -98,4 +100,20 @@ dependencies {
 
     implementation "com.google.dagger:dagger:2.39"
     kapt "com.google.dagger:dagger-compiler:2.39"
+    implementation "com.google.dagger:dagger-android:2.39"
+    implementation "com.google.dagger:dagger-android-support:2.39"
+    kapt "com.google.dagger:dagger-android-processor:2.39"
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+    implementation ("com.github.bumptech.glide:recyclerview-integration:4.11.0") {
+        // Excludes the support library because it's already included by Glide.
+        transitive = false
+    }
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
 }

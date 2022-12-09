@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pet_booking_main_navigation"
+    app:startDestination="@+id/main">
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.example.petbooking.presentation.ui.MainScreenFragment"
+        android:label="@string/main_nav_description"
+        tools:layout="@layout/main_screen_fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/requests"
+        android:name="com.example.petbooking.presentation.ui.RequestsFragment"
+        android:label="@string/requests_nav_description"
+        tools:layout="@layout/requests_fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/favorites"
+        android:name="com.example.petbooking.presentation.ui.FavoritesFragment"
+        android:label="@string/favorites_nav_description"
+        tools:layout="@layout/fragment_favorites">
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.petbooking.presentation.ui.ProfileFragment"
+        android:label="@string/profile_nav_description"
+        tools:layout="@layout/fragment_profile">
+    </fragment>
+
+</navigation>

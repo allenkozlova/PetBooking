@@ -1,41 +1,35 @@
 package com.example.petbooking.presentation.ui
 
+import android.os.Build
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.core.content.ContextCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.example.petbooking.R
-import com.example.petbooking.databinding.ActivityBase2Binding
+import dagger.android.AndroidInjection
+import dagger.android.DispatchingAndroidInjector
+import javax.inject.Inject
 
-class BaseActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityBase2Binding
+open class BaseActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
 
-        binding = ActivityBase2Binding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setupStatusBar()
 
-        setSupportActionBar(binding.toolbar)
-
-        val navController = findNavController(R.id.nav_host_fragment_content_base2)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_base2)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+    protected open fun setupStatusBar() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            val window = this.window
+            val wic = WindowInsetsControllerCompat(window, window.decorView)
+            wic.isAppearanceLightStatusBars = true
+            window.statusBarColor = ContextCompat.getColor(this, R.color.status_bar_color)
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.example.petbooking.di
 
 import androidx.annotation.NonNull
+import com.example.petbooking.BuildConfig
 import com.example.petbooking.data.ApiService
 import dagger.Module
 import dagger.Provides
@@ -10,7 +11,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-//Нужно внедрить контекст и заюзать Component.Builder + BindsInstance
 @Module
 class AppModule {
 
@@ -26,7 +26,7 @@ class AppModule {
     @Singleton
     fun provideRetrofit(@NonNull okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .client(okHttpClient)
-        .baseUrl("https://5e510330f2c0d300147c034c.mockapi.io/")
+        .baseUrl(BuildConfig.FIRST_HOST)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
