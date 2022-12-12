@@ -13,7 +13,7 @@
 
     <color name="status_bar_color">@color/white</color>
     <color name="toolbar_color">@color/white</color>
-    <color name="background_color">#E5E5E5</color>
+    <color name="background_color">#F4F4F4</color>
     <color name="primaryText">#131200</color>
     <color name="colorPrimary">#FFE03B</color>
     <color name="additionalText">#7C7C7C</color>

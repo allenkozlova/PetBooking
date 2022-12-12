@@ -1,8 +1,10 @@
-package com.example.petbooking.di
+package com.example.petbooking.di.modules
 
 import androidx.annotation.NonNull
 import com.example.petbooking.BuildConfig
-import com.example.petbooking.data.ApiService
+import com.example.petbooking.data.repositories.MainRepositoryImpl
+import com.example.petbooking.data.services.ApiService
+import com.example.petbooking.domain.repositories.MainRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -32,5 +34,10 @@ class AppModule {
 
     @Provides
     fun getApi(@NonNull retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+
+    @Provides
+    fun provideMainRepository(
+        mainRepositoryImpl: MainRepositoryImpl
+    ): MainRepository = mainRepositoryImpl
 
 }
