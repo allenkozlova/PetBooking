@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetBooking">
         <activity
-            android:name=".presentation.ui.BaseActivity"
+            android:name=".presentation.ui.common.BaseActivity"
             android:exported="false"
             android:label="@string/title_activity_base"
             android:theme="@style/Theme.PetBooking.NoActionBar" />

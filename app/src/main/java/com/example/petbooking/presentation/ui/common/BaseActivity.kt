@@ -1,4 +1,4 @@
-package com.example.petbooking.presentation.ui
+package com.example.petbooking.presentation.ui.common
 
 import android.os.Build
 import android.os.Bundle
@@ -19,9 +19,7 @@ open class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-
         setupStatusBar()
-
     }
 
     protected open fun setupStatusBar() {
