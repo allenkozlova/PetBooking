@@ -2,12 +2,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.petbookingapp"
+        applicationId "com.example.petbooking"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -116,4 +117,8 @@ dependencies {
         transitive = false
     }
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'com.google.firebase:firebase-analytics:21.2.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
+    implementation 'com.google.firebase:firebase-crashlytics:18.3.2'
 }

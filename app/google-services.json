@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "855583626214",
+    "project_id": "petbooking-27d48",
+    "storage_bucket": "petbooking-27d48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855583626214:android:ac2499506eba74c03e7c27",
+        "android_client_info": {
+          "package_name": "com.example.petbooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855583626214-utog16a2gtp1h5ia2idbnddvp9g9po8g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc7REzsyM290QDz7D0rsgdRQR84MushbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855583626214-utog16a2gtp1h5ia2idbnddvp9g9po8g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
