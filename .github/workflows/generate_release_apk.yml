@@ -50,3 +50,16 @@ jobs:
          asset_path: apk/app-debug.apk
          asset_name: ${{ github.event.repository.name }}.apk
          asset_content_type: application/zip
+         
+ send:
+   name: Send TG
+   needs: apk
+   runs-on: windows-latest
+   steps:
+    - name: Update status
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TGCHANNELID }}
+        token: ${{ secrets.TGKEY }}
+        message: |  #https://help.github.com/en/actions/reference/contexts-and-expression-syntax-for-github-actions#github-context
+          ${{ github.event_name }} commit in ${{ github.repository }} by "${{ github.actor }}". [${{github.sha}}@${{ github.ref }}]
