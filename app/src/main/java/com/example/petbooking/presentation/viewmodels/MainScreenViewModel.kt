@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.petbooking.domain.models.SitterModel
 import com.example.petbooking.domain.repositories.MainRepository
 import com.example.petbooking.errors.BadDataResponseException
+import com.example.petbooking.presentation.ui.main_screen.view_states.SitterMainScreenHolderState
 import com.example.petbooking.presentation.utils.Resource
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +15,7 @@ import java.util.logging.Handler
 
 class MainScreenViewModel (private val mainRepository: MainRepository) : ViewModel() {
 
-    private var mStateSitters = MutableStateFlow<Resource<List<SitterModel>>>(Resource.Loading())
+    private var mStateSitters = MutableStateFlow<Resource<List<SitterMainScreenHolderState>>>(Resource.Loading())
     val stateSitters get() = mStateSitters.asStateFlow()
 
     init {
@@ -27,7 +28,11 @@ class MainScreenViewModel (private val mainRepository: MainRepository) : ViewMod
             repeat(5) {
                 try {
                     val sitters = mainRepository.getSitters()
-                    mStateSitters.value = Resource.Success(sitters)
+                    var sitterHolderStates: MutableList<SitterMainScreenHolderState> = mutableListOf()
+                    sitters.forEach {
+                        sitterHolderStates.add(SitterMainScreenHolderState(it))
+                    }
+                    mStateSitters.value = Resource.Success(sitterHolderStates)
                 } catch (e: BadDataResponseException) {
                     mStateSitters.value = Resource.Error(e.message)
                 }

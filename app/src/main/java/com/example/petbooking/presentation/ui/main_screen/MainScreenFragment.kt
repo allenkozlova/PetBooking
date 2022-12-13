@@ -31,6 +31,8 @@ class MainScreenFragment : BaseFragment<MainScreenFragmentBinding>(){
         super.onViewCreated(view, savedInstanceState)
         setupObserver()
 
+        dataAdapter.addMap()
+
         with(binding.sittersList) {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = dataAdapter
