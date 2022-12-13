@@ -1,10 +1,11 @@
-package com.example.petbooking.presentation.ui
+package com.example.petbooking.presentation.ui.main_screen.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petbooking.databinding.SitterMainScreenItemBinding
-import com.example.petbooking.domain.SitterModel
+import com.example.petbooking.domain.models.SitterModel
+import com.example.petbooking.presentation.ui.main_screen.view_holders.SitterMainScreenViewHolder
 
 class SittersMainScreenAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

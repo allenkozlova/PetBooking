@@ -1,9 +1,11 @@
 name: Build and Release
 
+##Тестовый вариант
+
 on:
  push:
    branches:
-     - main
+     - Android-Pet-3
 
 jobs:
  apk:

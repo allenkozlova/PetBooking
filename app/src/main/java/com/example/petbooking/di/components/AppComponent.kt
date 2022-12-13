@@ -1,7 +1,10 @@
-package com.example.petbooking.di
+package com.example.petbooking.di.components
 
 import android.content.Context
 import com.example.petbooking.PetBookingApp
+import com.example.petbooking.di.modules.ActivityModule
+import com.example.petbooking.di.modules.AppModule
+import com.example.petbooking.di.modules.FragmentModule
 import dagger.android.AndroidInjector
 import dagger.BindsInstance
 import dagger.Component

@@ -1,39 +1,39 @@
 package com.example.petbooking.presentation.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.petbooking.data.ApiUser
-import com.example.petbooking.data.CatModel
-import com.example.petbooking.data.MainRepository
-import com.example.petbooking.domain.SitterModel
+import com.example.petbooking.domain.models.SitterModel
+import com.example.petbooking.domain.repositories.MainRepository
+import com.example.petbooking.errors.BadDataResponseException
 import com.example.petbooking.presentation.utils.Resource
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import java.util.logging.Handler
 
 class MainScreenViewModel (private val mainRepository: MainRepository) : ViewModel() {
 
-    private val users = MutableLiveData<Resource<List<SitterModel>>>()
+    private var mStateSitters = MutableStateFlow<Resource<List<SitterModel>>>(Resource.Loading())
+    val stateSitters get() = mStateSitters.asStateFlow()
 
     init {
-        fetchUsers()
+        loadSitters()
     }
 
-    private fun fetchUsers() {
+    private fun loadSitters() {
+        mStateSitters.value = Resource.Loading()
         viewModelScope.launch {
-            users.postValue(Resource.loading(null))
-            try {
-                val usersFromApi = mainRepository.getSitters()
-                users.postValue(Resource.success(usersFromApi))
-            } catch (e: Exception) {
-                users.postValue(Resource.error(e.toString(), null))
+            repeat(5) {
+                try {
+                    val sitters = mainRepository.getSitters()
+                    mStateSitters.value = Resource.Success(sitters)
+                } catch (e: BadDataResponseException) {
+                    mStateSitters.value = Resource.Error(e.message)
+                }
             }
+            delay(5000L)
         }
+
     }
-
-    fun getUsers(): LiveData<Resource<List<SitterModel>>> {
-        return users
-    }
-
-
 }

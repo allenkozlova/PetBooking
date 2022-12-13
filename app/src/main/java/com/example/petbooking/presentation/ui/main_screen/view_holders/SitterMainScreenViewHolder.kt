@@ -1,10 +1,10 @@
-package com.example.petbooking.presentation.ui
+package com.example.petbooking.presentation.ui.main_screen.view_holders
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.petbooking.R
 import com.example.petbooking.databinding.SitterMainScreenItemBinding
-import com.example.petbooking.domain.SitterModel
+import com.example.petbooking.domain.models.SitterModel
 
 class SitterMainScreenViewHolder(private val itemBinding: SitterMainScreenItemBinding): RecyclerView.ViewHolder(itemBinding.root) {
     private val stars = listOf(itemBinding.star1, itemBinding.star2, itemBinding.star3, itemBinding.star4, itemBinding.star5)
