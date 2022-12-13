@@ -53,7 +53,7 @@ jobs:
          
  send:
    name: Send TG
-   needs: apk
+   needs: release
    runs-on: windows-latest
    steps:
     - name: Update status
