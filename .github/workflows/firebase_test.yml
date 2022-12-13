@@ -3,7 +3,7 @@ name: Firebase test
 on:
  push:
    branches:
-     - main
+     - Android-Pet-3
      
 # A workflow is composed of one or more Jobs that can be executed sequentially or in parallel
 jobs:
