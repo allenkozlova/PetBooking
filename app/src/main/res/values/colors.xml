@@ -17,4 +17,5 @@
     <color name="primaryText">#131200</color>
     <color name="colorPrimary">#FFE03B</color>
     <color name="additionalText">#7C7C7C</color>
+    <color name="gray">#CECECE</color>
 </resources>

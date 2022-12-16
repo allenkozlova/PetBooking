@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petbooking.databinding.SitterMainScreenItemBinding
-import com.example.petbooking.domain.models.SitterModel
+import com.example.petbooking.domain.models.sitters.SitterModel
 import com.example.petbooking.presentation.ui.main_screen.view_holders.SitterMainScreenViewHolder
 
 class SittersMainScreenAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -25,9 +25,9 @@ class SittersMainScreenAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item: SitterModel = sitters[position]
-        val catalog: SitterModel = item
-        val catalogHolder = holder as SitterMainScreenViewHolder
-        catalogHolder.bind(catalog)
+        val sitterModel: SitterModel = item
+        val holder = holder as SitterMainScreenViewHolder
+        holder.bind(sitterModel)
     }
 
     override fun getItemCount(): Int = sitters.size

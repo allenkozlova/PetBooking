@@ -3,6 +3,8 @@ package com.example.petbooking.di.modules
 import com.example.petbooking.presentation.ui.favorites.FavoritesFragment
 import com.example.petbooking.presentation.ui.main_screen.MainScreenFragment
 import com.example.petbooking.presentation.ui.profile.ProfileFragment
+import com.example.petbooking.presentation.ui.requests.ActiveRequestsFragment
+import com.example.petbooking.presentation.ui.requests.CancelRequestsFragment
 import com.example.petbooking.presentation.ui.requests.RequestsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -21,4 +23,10 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributeProfileFragment(): ProfileFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributeActiveRequestsFragment(): ActiveRequestsFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributeCancelRequestsFragment(): CancelRequestsFragment
 }

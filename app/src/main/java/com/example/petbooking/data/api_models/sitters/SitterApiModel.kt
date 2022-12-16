@@ -1,4 +1,4 @@
-package com.example.petbooking.data.api_models
+package com.example.petbooking.data.api_models.sitters
 
 import com.google.gson.annotations.SerializedName
 

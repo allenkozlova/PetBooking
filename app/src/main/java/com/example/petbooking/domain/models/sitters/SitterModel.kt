@@ -1,4 +1,4 @@
-package com.example.petbooking.domain.models
+package com.example.petbooking.domain.models.sitters
 
 data class SitterModel(
     val id: Long,

@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.petbooking.R
 import com.example.petbooking.databinding.SitterMainScreenItemBinding
-import com.example.petbooking.domain.models.SitterModel
+import com.example.petbooking.domain.models.sitters.SitterModel
 
 class SitterMainScreenViewHolder(private val itemBinding: SitterMainScreenItemBinding): RecyclerView.ViewHolder(itemBinding.root) {
     private val stars = listOf(itemBinding.star1, itemBinding.star2, itemBinding.star3, itemBinding.star4, itemBinding.star5)

@@ -2,15 +2,14 @@ package com.example.petbooking.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.petbooking.domain.models.SitterModel
-import com.example.petbooking.domain.repositories.MainRepository
+import com.example.petbooking.domain.models.sitters.SitterModel
+import com.example.petbooking.domain.repositories.sitters.MainRepository
 import com.example.petbooking.errors.BadDataResponseException
 import com.example.petbooking.presentation.utils.Resource
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import java.util.logging.Handler
 
 class MainScreenViewModel (private val mainRepository: MainRepository) : ViewModel() {
 
@@ -24,6 +23,7 @@ class MainScreenViewModel (private val mainRepository: MainRepository) : ViewMod
     private fun loadSitters() {
         mStateSitters.value = Resource.Loading()
         viewModelScope.launch {
+            delay(5000L)
             repeat(5) {
                 try {
                     val sitters = mainRepository.getSitters()

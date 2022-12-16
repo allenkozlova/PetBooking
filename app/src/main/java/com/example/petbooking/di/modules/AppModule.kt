@@ -1,10 +1,16 @@
 package com.example.petbooking.di.modules
 
+import android.content.Context
 import androidx.annotation.NonNull
+import androidx.room.Room
 import com.example.petbooking.BuildConfig
-import com.example.petbooking.data.repositories.MainRepositoryImpl
+import com.example.petbooking.data.databases.PetBookingDataBase
+import com.example.petbooking.data.repositories.sitters.MainRepositoryImpl
 import com.example.petbooking.data.services.ApiService
-import com.example.petbooking.domain.repositories.MainRepository
+import com.example.petbooking.data.datasources.RequestsDataSource
+import com.example.petbooking.data.repositories.requests.RequestsRepositoryImpl
+import com.example.petbooking.domain.repositories.requests.RequestsRepository
+import com.example.petbooking.domain.repositories.sitters.MainRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -39,5 +45,26 @@ class AppModule {
     fun provideMainRepository(
         mainRepositoryImpl: MainRepositoryImpl
     ): MainRepository = mainRepositoryImpl
+
+    @Provides
+    @Singleton
+    fun provideDataBase(context: Context): PetBookingDataBase {
+        return Room.databaseBuilder(
+            context,
+            PetBookingDataBase::class.java,
+            "PetBookingDataBase"
+        )
+            .allowMainThreadQueries()
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRequestsDataSource(db: PetBookingDataBase): RequestsDataSource = RequestsDataSource(db)
+
+    @Provides
+    fun provideRequestsRepository(
+        requestsRepositoryImpl: RequestsRepositoryImpl
+    ): RequestsRepository = requestsRepositoryImpl
 
 }

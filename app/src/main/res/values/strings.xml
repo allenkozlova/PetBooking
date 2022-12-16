@@ -10,5 +10,15 @@
     <string name="favorites_nav_description">Избранное</string>
     <string name="profile_nav_description">Профиль</string>
 
-
+    <string name="retry_request">Повторить заявку</string>
+    <string name="pets">Питомцы</string>
+    <string name="dates">Даты</string>
+    <string name="status">Статус:</string>
+    <string name="request_date_header">Заявка от %s</string>
+    <string name="pet_marker_text"><![CDATA[&bull; %s]]></string>
+    <string name="cancel_status">завершена</string>
+    <string name="active_status">ожидает отклика</string>
+    <string name="has_feedbacks_status">есть отклики</string>
+    <string name="active">Активные</string>
+    <string name="cancel">Завершенные</string>
 </resources>
